@@ -10,6 +10,6 @@ class products extends Model
     protected $fillable = [
         'nombre',
         'precio',
-        'cantidad'
+        'Cantidad'
     ];
 }

@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('nombre');
             $table->double('precio',8,2);
             $table->integer('Cantidad');
+            $table->timestamps();
         });
     }
 

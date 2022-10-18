@@ -17,7 +17,8 @@ class CreateUsuariosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
-            $table->password_hash('contraseña');
+            $table->string('cedula',11);
+            $table->timestamps();
         });
     }
 

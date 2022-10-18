@@ -4,10 +4,10 @@
 
     <div class="mt-3">
         <a href="{{ route('usuarios.create') }}" class="btn btn-secondary">
-            Crear nuevo desarrollador
+            Crear nuevo Usuario
         </a>
     </div>
-    
+
 
 @section('scripts')
     <script src="{{ asset('js/jquery.min.js') }}"></script>
