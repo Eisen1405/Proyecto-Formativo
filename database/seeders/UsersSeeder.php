@@ -17,9 +17,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        $rolUsuario = Rol::where('nombre','Usuario')->first();
-        $rolAdmin = Rol::where('nombre','administrador')->first();
-
+        
         $usuario = User::create([
             'name' => 'Usuario general',
             'email' => 'usuario@gmail.com',
@@ -30,6 +28,8 @@ class UsersSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin')
         ]);
+        $rolUsuario = Rol::where('nombre','Usuario')->first();
+        $rolAdmin = Rol::where('nombre','administrador')->first();
 
         $usuario->roles()->attach($rolUsuario);
         $admin->roles()->attach($rolAdmin);

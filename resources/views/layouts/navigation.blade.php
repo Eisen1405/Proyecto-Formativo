@@ -18,7 +18,8 @@
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
+            <!-- Settings Dropdown -->$rolUsuario = Rol::where('nombre','Usuario')->first();
+        $rolAdmin = Rol::where('nombre','administrador')->first();
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('titulo', 'Nuevo producto')
+@section('titulo', 'Editar producto')
 
 @section('content')
     <form action="{{ route('products.update' , $products->id) }}" method="post" class="needs-validation" novalidate>

@@ -14,10 +14,10 @@ class RolUser extends Migration
     public function up()
     {
         Schema::create('rol_user', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('user_id')->constrainer();
-        $table->foreignId('rol_id')->constrainer();
-        $table->timestamps();
+            $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('rol_id')->constrained();
+            $table->timestamps();
         });
     }
 
@@ -28,11 +28,11 @@ class RolUser extends Migration
      */
     public function down()
     {
-        Schema::create('rol_user', function (Blueprint $table) {
-            $table->dropForeignId('rol_user_user_id_foreign');
-            $table->dropForeignId('rol_user_rol_id_foreign');
-        });
-        Schema::dropIfExist('rol_user');
+        Schema::table('rol_user', function (Blueprint $table) {
+            $table->dropForeign('rol_user_user_id_foreign');
+            $table->dropForeign('rol_user_rol_id_foreign');
 
+        });
+        Schema::dropIfExists('rol_user');
     }
 }

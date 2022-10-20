@@ -12,9 +12,17 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Products::all();
+        if($request)
+        {
+            $query = $request->buscar;
+            $products = Products::where('nombre','like', '%'. $query . '%')
+                                    ->orderBy('nombre','asc')
+                                    ->paginate(5);
+            return view('products.index', compact('products','query'));
+        }
+        $products = Products::orderBy('nombre', 'asc')->paginate(6);
 
         return view('products.index', compact('products'));
     }
